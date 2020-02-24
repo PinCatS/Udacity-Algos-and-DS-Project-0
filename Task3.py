@@ -76,19 +76,6 @@ unique_codes = set(codes)
 unique_codes_list = list(unique_codes)
 unique_codes_list.sort()
 
-"""
-Tests:
-expected ==> ('7406', '(080)')
-expected ==> 0.67
-
-calls = [['(04344)228249', '74066 93594', '01-09-2016 06:50:04', '2329'],
-['(080)62164823', '74066 93594', '01-09-2016 06:52:07', '300'],
-['(080)62164823', '(080)12345678', '01-09-2016 06:52:07', '300'],
-['(080)62164823', '(080)12345678', '01-09-2016 06:52:07', '300']]
-
-codes = get_called_from(calls, '(080)')
-print(codes, codes.count('(080)'), len(codes))
-"""
 
 print("The numbers called by people in Bangalore have codes:")
 for code in unique_codes_list:
@@ -96,26 +83,3 @@ for code in unique_codes_list:
 
 print("{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
  				.format(codes.count('(080)') / len(codes)))
-
-"""
-Efficiency analysis:
-
-Time:
-	extract_code and isFrom are O(1)
-	called_from_code_list is O(n) because it iterates through all calls
-
-	there is a set created from the list to get unique values. It takes O(n)
-	than it is converted back to the list because we want to sort uniques values (set is unordered). It takes O(n)
-	And finally we sort the list which takes O(nlogn) because timsort is used
-
-	printing also takes O(n)
-
-	The task3 takes O(nlogn) because of sorting.
-
-Space:
-	To store all calls from Bangalore we use the list ==> O(n)
-	To get unique values, we use set ==> O(n)
-	To get ordered unique values we use list ==> O(n)
-
-	So the space efficiency is O(3n) ==> O(n)
-"""

@@ -26,8 +26,3 @@ incoming_number, answering_numer, time, duration = calls[-1]
 print("Last record of calls, {} calls {} at time {}, lasting {} seconds"    
             .format(incoming_number, answering_numer, time, duration))
 
-"""
-Efficiency analysis:
-Since under the hood of python list there is C-array, it takes O(1) to access the elements
-"""
-

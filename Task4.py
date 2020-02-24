@@ -35,6 +35,7 @@ def extract(calls):
     
     return outgoing, receiving
 
+
 outgoing_calls, receiving_calls = extract(calls)
 outgoing_texts, receiving_texts = extract(texts)
 telemarketers = (receiving_texts | receiving_calls) & (outgoing_calls - outgoing_texts)
@@ -44,29 +45,4 @@ telemarketers_list.sort()
 
 for telemarketer in telemarketers_list:
     print(telemarketer)
-
-"""
-Efficiency analysis
-
-    extract() has time O(n) because it iterates through all calls/texts
-    extract() requires space O(2n) ==> O(n)
-
-    Task 4 has time O(nlogn): to be more specific
-        extracts ==> O(2n)
-        union ==> O(len(r_t) + len(r_c))
-        difference ==> O(len(o_c))
-        intersect ==> O(min(x1, x2))
-        
-        list from set ==> O(n)
-        sort ==> O(nlogn)
-        in ==> O(n)
-
-    Task 4 has space O(n): to be more specific:
-        extract() ==> O(2n)
-
-        4 sets of numbers ==> O(4n)
-        telemarketers ==> O(n)
-        list ==> O(n)
-        Their sum ==> O(4n) + O(n) + O(n) ==> O(6n)
-"""
 

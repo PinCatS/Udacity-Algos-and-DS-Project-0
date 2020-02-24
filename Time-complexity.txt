@@ -1,0 +1,40 @@
+Task 0:
+    Since under the hood of python list there is C-array, it takes O(1) to access the elements
+
+
+Task 1:
+    O(n) because we need to run through all records and add them to the set
+
+
+Task 2:
+    O(n) because functions are run through the list of calls.
+    Access to dict via key should take O(1)
+
+
+Task 3:
+    O(nlogn) due to sorting.
+
+    Details:
+        extract_code() and isFrom() are O(1)
+        called_from_code_list() is O(n) because it iterates through all calls
+
+        there is a set created from the list to get unique values. It takes O(n)
+        than it is converted back to the list because we want to sort uniques values (set is unordered). It takes O(n)
+        And finally we sort the list which takes O(nlogn) because timsort is used
+
+        Pinting also takes O(n)
+
+
+Task 4:
+    O(nlogn): due to sorting
+
+    Details:
+    
+        extract() ==> O(n)
+        union ==> O(len(r_t) + len(r_c))
+        difference ==> O(len(o_c))
+        intersect ==> O(min(x1, x2))
+        
+        list from set ==> O(n)
+        sort ==> O(nlogn)
+        in ==> O(n)

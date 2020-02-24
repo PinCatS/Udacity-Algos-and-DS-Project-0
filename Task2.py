@@ -24,9 +24,11 @@ def getDate(call):
     date, time = call[2].split()
     return date.split('-')
 
+
 def isCallInMonth(call, month, year):
     call_day, call_month, call_year = getDate(call)
     return  int(call_month) == month and int(call_year) == year
+
 
 def calls_in_date(calls, month, year):
     calls_list = []
@@ -35,6 +37,7 @@ def calls_in_date(calls, month, year):
             calls_list.append(call)
 
     return calls_list
+
 
 def get_longest_in(calls, month, year):
     numbers_dict = {}
@@ -60,24 +63,7 @@ def get_longest_in(calls, month, year):
 
     return max_number, max_duration
 
-"""
-#Tests
-#expected ==> (04344)228249 2329
-#expected ==> 74066 93594 2629
-
-calls = [['(04344)228249', '(080)43901222', '01-09-2016 06:50:04', '2329'],
-['(080)62164823', '74066 93594', '01-09-2016 06:52:07', '300']]
-
-calls = [['(04344)228249', '74066 93594', '01-09-2016 06:50:04', '2329'],
-['(080)62164823', '74066 93594', '01-09-2016 06:52:07', '300']]
-"""
 
 print("{} spent the longest time, {} seconds, on the phone during September 2016."
             .format(*get_longest_in(calls, 9, 2016)))
-
-"""
-Performance
-Time: O(n) because functions are run through the list of calls. Access to dict via key should take O(1)
-Space: O(n) because we use list and dict structures
-"""
 
