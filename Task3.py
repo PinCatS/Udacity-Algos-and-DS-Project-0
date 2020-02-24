@@ -71,7 +71,15 @@ def get_called_from(calls, code):
 	
 	return called_from_code_list
 
-codes = get_called_from(calls, '(080)')
+"""
+Returns percentage of code in codes
+"""
+def percentage_of(codes, code):
+	return codes.count(code) / len(codes) * 100
+
+BANGALOR_CODE = '(080)'
+
+codes = get_called_from(calls, BANGALOR_CODE)
 unique_codes = set(codes)
 unique_codes_list = list(unique_codes)
 unique_codes_list.sort()
@@ -82,4 +90,4 @@ for code in unique_codes_list:
    print(code)
 
 print("{:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore."
- 				.format(codes.count('(080)') / len(codes)))
+ 				.format(percentage_of(codes, BANGALOR_CODE)))
