@@ -38,7 +38,7 @@ def extract(calls):
 
 outgoing_calls, receiving_calls = extract(calls)
 outgoing_texts, receiving_texts = extract(texts)
-telemarketers = (receiving_texts | receiving_calls) & (outgoing_calls - outgoing_texts)
+telemarketers = outgoing_calls - (outgoing_texts | receiving_texts | receiving_calls)
 
 telemarketers_list = list(telemarketers)
 telemarketers_list.sort()
