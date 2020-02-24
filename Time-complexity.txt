@@ -5,6 +5,10 @@ Task 0:
 Task 1:
     O(n) because we need to run through all records and add them to the set
 
+    Details:
+        2 x get_uniques: O(2n)
+        union ==> O(len(u1) + len(u2))
+
 
 Task 2:
     O(n) because functions are run through the list of calls.
@@ -22,7 +26,7 @@ Task 3:
         than it is converted back to the list because we want to sort uniques values (set is unordered). It takes O(n)
         And finally we sort the list which takes O(nlogn) because timsort is used
 
-        Pinting also takes O(n)
+        Printing also takes O(n) because it iterates through the list
 
 
 Task 4:
@@ -33,7 +37,6 @@ Task 4:
         extract() ==> O(n)
         union ==> O(len(r_t) + len(r_c))
         difference ==> O(len(o_c))
-        intersect ==> O(min(x1, x2))
         
         list from set ==> O(n)
         sort ==> O(nlogn)
