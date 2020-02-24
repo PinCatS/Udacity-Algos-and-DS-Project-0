@@ -27,8 +27,6 @@ def get_unique(records):
     
     return unique
 
-
-unique_from_calls = get_unique(calls)
-unique_from_texts = get_unique(texts)
-unique_total = len(unique_from_calls) + len(unique_from_texts)
-print("There are {} different telephone numbers in the records.".format(unique_total))
+ 
+unique_numbers = get_unique(calls) | get_unique(texts)
+print("There are {} different telephone numbers in the records.".format(len(unique_numbers)))
