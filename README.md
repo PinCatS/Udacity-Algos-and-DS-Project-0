@@ -1,4 +1,4 @@
-# algorithms-and-data-structures
+# Unscramble computer science problems
 Project 0 at Udacity Algorithms and Data structures nanodegree program
 
 The main goal of the project is to be able to split tasks into smaller managebale tasks which together will lead to the task x solution.
